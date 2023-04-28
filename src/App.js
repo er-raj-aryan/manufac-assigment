@@ -1,60 +1,106 @@
 import React from "react";
 import "./App.css";
 import ReactECharts from "echarts-for-react";
-import WineData from './Data/Wine-Data.json';
+import WineData from "./Data/Wine-Data.json";
 
 function App() {
   const ChartOptions = [
     {
-      grid: { top: 8, right: 8, bottom: 24, left: 36 },
-      xAxis: {
-        type: "category",
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-      },
-      yAxis: {
-        type: "value",
-      },
-      series: [
-        {
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: "line",
-          smooth: true,
+      title: "Line Chart",
+      xAxisLabel: "Flavanoids",
+      yAxisLabel: "Ash",
+      option: {
+        grid: { top: 8, right: 8, bottom: 24, left: 36 },
+        xAxis: {
+          type: "category",
+          data: getValueFlavanoids(),
         },
-      ],
-      tooltip: {
-        trigger: "axis",
+        yAxis: {
+          type: "value",
+          data: getValueAsh(),
+        },
+        series: [
+          {
+            data: getValueFlavanoids(),
+            type: "line",
+            smooth: true,
+          },
+          {
+            data: getValueAsh(),
+            type: "line",
+            smooth: true,
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+        },
       },
     },
     {
-      grid: { top: 8, right: 8, bottom: 24, left: 36 },
-      xAxis: {
-        type: "category",
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-      },
-      yAxis: {
-        type: "value",
-      },
-      series: [
-        {
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: "bar",
-          smooth: true,
+      title: "Bar Chart",
+      xAxisLabel: "Alcohol",
+      yAxisLabel: "Magnesium",
+      option: {
+        grid: { top: 8, right: 8, bottom: 24, left: 36 },
+        xAxis: {
+          type: "category",
+          data: getValueAlcohol(),
         },
-      ],
-      tooltip: {
-        trigger: "axis",
+        yAxis: {
+          type: "value",
+          data: getValueMagnesium(),
+        },
+        series: [
+          {
+            data: getValueAlcohol(),
+            type: "bar",
+            smooth: true,
+          },
+          {
+            data: getValueMagnesium(),
+            type: "bar",
+            smooth: true,
+          },
+        ],
+        tooltip: {
+          trigger: "axis",
+        },
       },
     },
   ];
 
-  console.log("raj",WineData)
+  function getValueFlavanoids() {
+    return WineData.map((e) => {
+      return e.Flavanoids;
+    });
+  }
+  function getValueAsh() {
+    return WineData.map((e) => {
+      return e.Ash;
+    });
+  }
+
+  function getValueAlcohol() {
+    return WineData.map((e) => {
+      return e.Alcohol;
+    });
+  }
+  function getValueMagnesium() {
+    return WineData.map((e) => {
+      return e.Magnesium;
+    });
+  }
 
   return (
     <div className="App">
       {ChartOptions.map((options) => (
-        <div>
-          <h1>{options.series[0].type.toUpperCase()}</h1>
-          <ReactECharts option={options} />
+        <div className="mainContainer">
+          <p className="yAxisLabel">{options.yAxisLabel}</p>
+          <div className="chartContainer">
+            <h2 className="chartType">{options.title}</h2>
+            <ReactECharts option={options.option} />
+            <p className="xAxisLabel">{options.xAxisLabel}</p>
+          </div>
         </div>
       ))}
     </div>
