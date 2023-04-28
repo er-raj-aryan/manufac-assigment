@@ -37,5 +37,7 @@
     ]
   },
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": "https://github.com/er-raj-aryan/manufac-assigment.git",
+  "author": "Raj Aryan <raj@dailycutting.com>"
 }

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ReactECharts from "echarts-for-react";
+import WineData from './Data/Wine-Data.json';
 
 function App() {
   const ChartOptions = [
@@ -45,6 +46,8 @@ function App() {
       },
     },
   ];
+
+  console.log("raj",WineData)
 
   return (
     <div className="App">
