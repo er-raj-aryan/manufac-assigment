@@ -1,95 +1,26 @@
 import React from "react";
 import "./App.css";
 import ReactECharts from "echarts-for-react";
-import WineData from "./Data/Wine-Data.json";
+import * as ChartHelper from './utils/chartOptionsHelper';
 
 function App() {
+     
   const ChartOptions = [
+    // Line chart options which help to where xAxis for Alcohol and y axis for Magnesium
     {
       title: "Line Chart",
       xAxisLabel: "Flavanoids",
       yAxisLabel: "Ash",
-      option: {
-        grid: { top: 8, right: 8, bottom: 24, left: 36 },
-        xAxis: {
-          type: "category",
-          data: getValueFlavanoids(),
-        },
-        yAxis: {
-          type: "value",
-          data: getValueAsh(),
-        },
-        series: [
-          {
-            data: getValueFlavanoids(),
-            type: "line",
-            smooth: true,
-          },
-          {
-            data: getValueAsh(),
-            type: "line",
-            smooth: true,
-          },
-        ],
-        tooltip: {
-          trigger: "axis",
-        },
-      },
+      option: ChartHelper.GetChartOption(ChartHelper.GetValuesFromWineData('Flavanoids'),ChartHelper.GetValuesFromWineData('Ash'),'line'),
     },
+    // Bar chart options which help to where xAxis for Alcohol and y axis for Magnesium
     {
       title: "Bar Chart",
       xAxisLabel: "Alcohol",
       yAxisLabel: "Magnesium",
-      option: {
-        grid: { top: 8, right: 8, bottom: 24, left: 36 },
-        xAxis: {
-          type: "category",
-          data: getValueAlcohol(),
-        },
-        yAxis: {
-          type: "value",
-          data: getValueMagnesium(),
-        },
-        series: [
-          {
-            data: getValueAlcohol(),
-            type: "bar",
-            smooth: true,
-          },
-          {
-            data: getValueMagnesium(),
-            type: "bar",
-            smooth: true,
-          },
-        ],
-        tooltip: {
-          trigger: "axis",
-        },
-      },
-    },
+      option: ChartHelper.GetChartOption(ChartHelper.GetValuesFromWineData('Alcohol'),ChartHelper.GetValuesFromWineData('Magnesium'),'bar'),
+    }
   ];
-
-  function getValueFlavanoids() {
-    return WineData.map((e) => {
-      return e.Flavanoids;
-    });
-  }
-  function getValueAsh() {
-    return WineData.map((e) => {
-      return e.Ash;
-    });
-  }
-
-  function getValueAlcohol() {
-    return WineData.map((e) => {
-      return e.Alcohol;
-    });
-  }
-  function getValueMagnesium() {
-    return WineData.map((e) => {
-      return e.Magnesium;
-    });
-  }
 
   return (
     <div className="App">
