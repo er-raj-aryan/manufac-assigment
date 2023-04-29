@@ -1,3 +1,11 @@
+# manufac-assigment
+
+### Line Chart
+![image](https://user-images.githubusercontent.com/55110091/235287219-d3c58088-d51d-48d7-bf08-2d244ef8a8e8.png)
+
+### Bar Chart
+![image](https://user-images.githubusercontent.com/55110091/235287250-6aaad44c-75ec-4c63-b286-11e100029977.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +76,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# manufac-assigment
+
+
+
