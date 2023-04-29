@@ -4,16 +4,15 @@ import ReactECharts from "echarts-for-react";
 import * as ChartHelper from './utils/chartOptionsHelper';
 
 function App() {
-     
   const ChartOptions = [
-    // Line chart options which help to where xAxis for Alcohol and y axis for Magnesium
+    // Line chart options which help to where xAxis represent for Alcohol and yAxis represent for Magnesium
     {
       title: "Line Chart",
       xAxisLabel: "Flavanoids",
       yAxisLabel: "Ash",
       option: ChartHelper.GetChartOption(ChartHelper.GetValuesFromWineData('Flavanoids'),ChartHelper.GetValuesFromWineData('Ash'),'line'),
     },
-    // Bar chart options which help to where xAxis for Alcohol and y axis for Magnesium
+    // Bar chart options which help to where xAxis represent for Alcohol and yAxis represent for Magnesium
     {
       title: "Bar Chart",
       xAxisLabel: "Alcohol",
