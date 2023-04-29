@@ -1,10 +1,10 @@
 # manufac-assigment
 
 ### Line Chart
-![image](https://user-images.githubusercontent.com/55110091/235287219-d3c58088-d51d-48d7-bf08-2d244ef8a8e8.png)
+![image](https://user-images.githubusercontent.com/55110091/235294511-db1e630c-54b9-4fd5-a6b0-1e4732d078c5.png)
 
 ### Bar Chart
-![image](https://user-images.githubusercontent.com/55110091/235287250-6aaad44c-75ec-4c63-b286-11e100029977.png)
+![image](https://user-images.githubusercontent.com/55110091/235294553-6a993870-557f-4c0f-8c64-052cd5928df8.png)
 
 # Getting Started with Create React App
 
